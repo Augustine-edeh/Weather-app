@@ -15,18 +15,17 @@ body {
   height: 30rem;
   width: 55rem;
   background-color: #fff;
-  margin: 0 auto;
+  padding: 1rem;
   border-radius: 10px;
 }
-
 .left-section {
   background: red;
   background: #f4f9ff;
-
   width: 38%;
 }
 .right-section {
   width: 62%;
+  /* height: 100%; */
 }
 .app-title {
   width: 300px;
@@ -42,7 +41,7 @@ body {
   color: #293251;
 }
 .weather-icon img {
-  /* height: 200px; */
+  height: 8rem;
   /* width: 200px; */
 }
 .notification {
@@ -99,4 +98,48 @@ body {
   color: #293251;
   text-align: center;
   font-size: 0.7em;
+}
+form {
+  display: flex;
+  justify-content: end;
+  /* height: 3rem; */
+  height: 10%;
+}
+input {
+  /* height: 2.5em; */
+  width: 25rem;
+  outline: none;
+  font-size: 1.6rem;
+  border-radius: 0.4rem 0 0 0.4rem;
+  padding: 0 1rem;
+}
+input:focus {
+  outline: 0.05rem solid rgb(19, 95, 227);
+}
+label {
+  display: grid;
+  place-content: center;
+  width: 3rem;
+  height: 100%;
+  background: rgba(0, 136, 255, 0.257);
+  color: #fff;
+  border: solid 0.1rem rgba(0, 136, 255, 0.257);
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+.city {
+  height: 90%;
+  display: grid;
+  place-content: center;
+}
+.city div {
+  display: flex;
+  height: 5rem;
+}
+.city div img {
+}
+.city div span {
+  display: grid;
+  place-content: center;
+  font-size: 3rem;
+  padding: 2rem;
 }
