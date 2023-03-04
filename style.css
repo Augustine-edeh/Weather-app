@@ -19,78 +19,92 @@ body {
   border-radius: 10px;
 }
 .left-section {
-  background: red;
   background: #f4f9ff;
   width: 38%;
 }
 .right-section {
   width: 62%;
-  /* height: 100%; */
 }
 .left-section-top {
-  /* background: red; */
   height: 80%;
+  /* background: #9bc1ef; */
 }
 .app-title {
-  width: 300px;
-  height: 50px;
-  border-radius: 10px 10px 0 0;
+  display: grid;
+  place-content: center;
+  height: 15%;
+  background: gray;
 }
 .app-title p {
   text-transform: uppercase;
   text-align: center;
-  padding: 15px;
   margin: 0 auto;
-  font-size: 1.6em;
+  font-size: 1.6rem;
   color: #293251;
-}
-.weather-icon img {
-  height: 8rem;
-  /* width: 200px; */
 }
 .notification {
   background-color: #f8d7da;
-  display: none;
 }
 .notification p {
   color: #721c24;
   font-size: 1.2em;
   margin: 0;
   text-align: center;
-  padding: 10px 0;
 }
 .weather-container {
-  width: 300px;
-  height: 260px;
-  background: #f4f9ff;
+  /* width: 100%; */
+  height: 85%;
+  background: #9bc1ef;
+  display: flex;
+  flex-direction: column;
 }
-
+.weather-container div {
+  /* background: red; */
+  /* height: 25%; */
+}
 .weather-icon {
-  width: 300px;
-  height: 128px;
+  width: 100%;
+  height: 50%;
+  /* background: red; */
 }
 .weather-icon img {
-  display: block;
-  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+.temperature-value,
+.temperature-description,
+.location {
+  display: grid;
+  place-content: center;
+  flex: 1;
 }
 .temperature-value {
-  width: 300px;
-  height: 60px;
+  background: green;
+  /* width: 300px; */
+  /* height: 60px; */
+  padding-top: 0.5rem;
+  margin-top: 1rem;
+  font-size: 3rem;
 }
 
+.temperature-description {
+  background: red;
+}
+
+.location {
+  /* display: none; */
+  background: yellow;
+}
 .temperature-value p {
-  padding: 0;
-  margin: 0;
   color: #293251;
-  font-size: 4em;
-  text-align: center;
+  /* font-size: 4em; */
+  /* text-align: center; */
 }
 .temperature-value span {
   color: #293251;
   font-size: 0.5em;
 }
 .temperature-description {
-  padding: 8px;
   margin: 0;
   color: #293251;
   text-align: center;
@@ -98,28 +112,19 @@ body {
 }
 .location {
   margin: 0;
-  padding: 0;
   color: #293251;
   text-align: center;
   font-size: 0.7em;
 }
 .additional-info {
   display: flex;
-  /* background: grey; */
   border-top: 0.1rem solid gray;
-  /* background: peru; */
   height: 20%;
-  /* height: 3rem; */
-  /* gap: 0.1rem; */
 }
 .additional-info div {
-  /* text-align: center; */
   display: grid;
   place-content: center;
   flex: 1;
-  /* background: transparent; */
-  /* height: 100%; */
-  /* border-top: 0.1rem black solid; */
 }
 .humidity {
   border-left: 0.1rem solid gray;
@@ -127,11 +132,9 @@ body {
 form {
   display: flex;
   justify-content: end;
-  /* height: 3rem; */
   height: 10%;
 }
 input {
-  /* height: 2.5em; */
   width: 25rem;
   outline: none;
   font-size: 1.6rem;
@@ -166,5 +169,4 @@ label {
   display: grid;
   place-content: center;
   font-size: 3rem;
-  padding: 2rem;
 }
