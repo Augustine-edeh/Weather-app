@@ -6,15 +6,27 @@
 body {
   background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
   font-family: "ubuntu", sans-serif;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
 }
 .container {
-  width: 300px;
+  display: flex;
+  height: 30rem;
+  width: 55rem;
   background-color: #fff;
-  display: block;
   margin: 0 auto;
-  margin-top: 100px;
   border-radius: 10px;
-  padding-bottom: 50px;
+}
+
+.left-section {
+  background: red;
+  background: #f4f9ff;
+
+  width: 38%;
+}
+.right-section {
+  width: 62%;
 }
 .app-title {
   width: 300px;
