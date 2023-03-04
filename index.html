@@ -9,26 +9,41 @@
   </head>
   <body>
     <main class="container">
-      <div class="app-title">
-        <p>Weather</p>
-      </div>
+      <section class="left-section">
+        <div class="app-title">
+          <p>Weather</p>
+        </div>
 
-      <div class="notification">wfd</div>
+        <div class="notification">wfd</div>
 
-      <div class="weather-container"></div>
+        <div class="weather-container">
+          <div class="weather-icon">
+            <img src="./Icons/cloud-sun.svg" alt="" />
+          </div>
+          <div class="temperature-value">
+            <p>25&deg; <span>C</span></p>
+          </div>
+          <div class="temperature-description">
+            <p>few clouds</p>
+          </div>
+          <div class="location">
+            <p>Lagos, Nigeria</p>
+          </div>
+        </div>
+      </section>
 
-      <div class="weather-icon">
-        <img src="./Icons/cloud-sun.svg" alt="" />
-      </div>
-      <div class="temperature-value">
-        <p>25&deg; <span>C</span></p>
-      </div>
-      <div class="temperature-description">
-        <p>few clouds</p>
-      </div>
-      <div class="location">
-        <p>Lagos, Nigeria</p>
-      </div>
+      <section class="right-section">
+        <input type="search" />
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" />
+            <label class="form-label" for="form1">Search</label>
+          </div>
+          <button type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </section>
     </main>
     <script src="app.js"></script>
   </body>
