@@ -60,9 +60,13 @@ const getCurrentPosition = (event) => {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
+          notification.style.backgroundColor = "yellow";
+
           // console.log(data.weather);
         })
         .catch((error) => {
+          // notification.style.backgroundColor = "yellow";
+          // window.alert(error);
           console.error(error);
         });
     });
