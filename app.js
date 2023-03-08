@@ -79,6 +79,9 @@ const getCurrentPosition = (event) => {
             .then((responseData) => {
               // console.log(responseData[0].name["common"])
               const country = responseData[0].name["common"];
+              document.querySelector(
+                ".city-value"
+              ).textContent = `${data.name} ${country}`;
             });
 
           // } catch (error) {
