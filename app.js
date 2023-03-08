@@ -22,6 +22,13 @@ weather.temperature = {
 // || CONST & VARIABLES
 const KELVIN = 273;
 
+// || GET-CURRENT-POSITION ERROR HANDLER FUNCTION
+const errorHandler = (error) => {
+  alert(
+    "There was an error processing your Geolocation.\n\n Check your internet connection and try again."
+  );
+};
+
 // || GET CURRENT POSITION FUNCTION
 const getCurrentPosition = (event) => {
   // || API KEY
@@ -54,30 +61,39 @@ const getCurrentPosition = (event) => {
     searchElement.addEventListener("click", () => {
       const cityValue = inputElement.value;
 
-      // const url_2 = `http://api.openweathermap.org/geo/1.0/direct?q=${cityValue}&limit&appid=${apiKey}`;
       const url_2 = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${apiKey}&units=metric`;
       fetch(url_2)
         .then((response) => response.json())
         .then((data) => {
+          notification.style.backgroundColor = "orange";
+          // if (data.hasOwnProperty("message")) {
+          //   throw new Error();
+          // }
+          // try {
           console.log(data);
-          notification.style.backgroundColor = "yellow";
+          console.log(data.sys.country);
+          console.log(data.sys.id);
+          console.log(data.name);
 
-          // console.log(data.weather);
+          // } catch (error) {
+          // console.log("Errowpj: !!!!!" + error);
+          // throw new Error();
+          // }
         })
         .catch((error) => {
-          // notification.style.backgroundColor = "yellow";
+          notification.style.backgroundColor = "yellow";
           // window.alert(error);
-          console.error(error);
+          alert("Yes!");
+          console.error(`There was an error ${error}`);
         });
     });
 
     // console.log(position.coords);
     // || REMEMBER TO TRY USING OBJECT DESTRUCTURING FOR THE COORDINATES
 
-    // ||TRY USING ASYNC FOR THE LATITUDE & LONGITUDE VARIABLES
-  });
+    // || TRY USING ASYNC FOR THE LATITUDE & LONGITUDE VARIABLES
+  }, errorHandler);
 };
-
 // || GETTING USER LIVE LOCATION
 window.addEventListener("load", getCurrentPosition);
 
