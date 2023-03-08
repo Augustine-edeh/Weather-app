@@ -74,6 +74,12 @@ const getCurrentPosition = (event) => {
           console.log(data.sys.country);
           console.log(data.sys.id);
           console.log(data.name);
+          fetch(`https://restcountries.com/v3.1/alpha/${data.sys.country}`)
+            .then((response) => response.json())
+            .then((responseData) => {
+              // console.log(responseData[0].name["common"])
+              const country = responseData[0].name["common"];
+            });
 
           // } catch (error) {
           // console.log("Errowpj: !!!!!" + error);
