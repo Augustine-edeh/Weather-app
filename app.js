@@ -8,11 +8,6 @@ const notification = document.querySelector(".notification");
 const searchElement = document.querySelector(".search");
 const inputElement = document.querySelector("#search");
 
-// inputElement.addEventListener("keydown", (e) => {
-//   e.preventDefault;
-//   console.log(inputElement.value);
-// });
-
 // || APP DATA
 const weather = {};
 weather.temperature = {
@@ -40,23 +35,7 @@ const getCurrentPosition = (event) => {
     console.log(position);
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
-    // console.log(latitude, longitude);
-    // position.coords;
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-
-    // console.log({ lat: latitude, longi: longitude });
-
-    // searchElement.addEventListener("click", () => {
-    //   fetch(url)
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //       console.log(data.weather[0]);
-    //       // console.log(data.weather);
-    //     })
-    //     .catch((error) => {
-    //       console.error(error);
-    //     });
-    // });
 
     searchElement.addEventListener("click", () => {
       const cityValue = inputElement.value;
@@ -66,10 +45,6 @@ const getCurrentPosition = (event) => {
         .then((response) => response.json())
         .then((data) => {
           notification.style.backgroundColor = "orange";
-          // if (data.hasOwnProperty("message")) {
-          //   throw new Error();
-          // }
-          // try {
           console.log(data);
           console.log(data.sys.country);
           console.log(data.sys.id);
@@ -77,42 +52,19 @@ const getCurrentPosition = (event) => {
           fetch(`https://restcountries.com/v3.1/alpha/${data.sys.country}`)
             .then((response) => response.json())
             .then((responseData) => {
-              // console.log(responseData[0].name["common"])
               const country = responseData[0].name["common"];
               document.querySelector(
                 ".city-value"
               ).textContent = `${data.name} ${country}`;
             });
-
-          // } catch (error) {
-          // console.log("Errowpj: !!!!!" + error);
-          // throw new Error();
-          // }
         })
         .catch((error) => {
           notification.style.backgroundColor = "yellow";
-          // window.alert(error);
           alert("Yes!");
           console.error(`There was an error ${error}`);
         });
     });
-
-    // console.log(position.coords);
-    // || REMEMBER TO TRY USING OBJECT DESTRUCTURING FOR THE COORDINATES
-
-    // || TRY USING ASYNC FOR THE LATITUDE & LONGITUDE VARIABLES
   }, errorHandler);
 };
 // || GETTING USER LIVE LOCATION
 window.addEventListener("load", getCurrentPosition);
-
-// console.log(latitude);
-
-// const fetchWeather = () => {
-//   fetch(url)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data);
-//       // console.log(data.weather);
-//     });
-// };
