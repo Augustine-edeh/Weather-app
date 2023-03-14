@@ -13,6 +13,68 @@ body {
   place-content: center;
   min-height: 100vh;
 }
+/* Start of New interface */
+.main {
+  background: #fff;
+  border-radius: 0.8rem;
+  width: 40rem;
+}
+.title {
+  font-size: 1.5rem;
+  padding: 1.5rem 0 0 2rem;
+  color: #29a5e8;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.hr-1 {
+  margin: 2.5rem 0;
+}
+.lower-sect {
+  padding: 0 2rem 2rem 2rem;
+}
+.input {
+  height: 5rem;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  text-align: center;
+  border-radius: 0.8rem;
+  outline: none;
+  border: 0.125rem solid grey;
+}
+.input:focus {
+  border-color: #000;
+}
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+.divider hr {
+  flex: 1;
+}
+.divider span {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-style: italic;
+}
+.get-location_button {
+  height: 5rem;
+  width: 100%;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #0aa0f0;
+  border: none;
+  border-radius: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.get-location_button:hover {
+  background: #0a9ff0cd;
+}
+/* End of New interface */
 .container {
   display: flex;
   height: 30rem;
@@ -142,14 +204,15 @@ form {
   justify-content: end;
   height: 10%;
 }
-input {
+/* Correct selector for this input element */
+input [type] {
   width: 25rem;
   outline: none;
   font-size: 1.6rem;
   border-radius: 0.4rem 0 0 0.4rem;
   padding: 0 1rem;
 }
-input:focus {
+input [type]:focus {
   outline: 0.05rem solid rgb(19, 95, 227);
 }
 label {
